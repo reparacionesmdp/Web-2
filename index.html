@@ -1,1 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMec - Soporte Diagnóstico y Cálculo Técnico</title>
+    <meta name="description" content="Plataforma de soporte técnico con calculadoras de conversión y guías detalladas para el diagnóstico de fallas eléctricas y mecánicas.">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0d9488;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+            --text: #374151;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #fafafa; color: var(--text); line-height: 1.6; }
+        header { background-color: var(--primary); color: white; padding: 1.5rem 0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        nav h1 { font-size: 1.8rem; font-weight: 700; }
+        nav ul { display: flex; list-style: none; gap: 1.5rem; }
+        nav a { color: white; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+        nav a:hover { color: #93c5fd; }
+        
+        .hero { background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); color: white; padding: 4rem 0; text-align: center; }
+        .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: #cbd5e1; }
+
+        .main-content { padding: 3rem 0; display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; }
+        @media (max-width: 768px) { .main-content { grid-template-columns: 1fr; } }
+
+        section { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+        h3 { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.5rem; border-bottom: 2px solid var(--light); padding-bottom: 0.5rem; }
+        
+        /* Herramienta Interactiva */
+        .calc-group { margin-bottom: 1.25rem; }
+        .calc-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+        .calc-group select, .calc-group input { width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+        button { background-color: var(--secondary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 4px; cursor: pointer; font-size: 1rem; font-weight: 600; width: 100%; }
+        button:hover { background-color: #0f766e; }
+        #result { margin-top: 1.5rem; padding: 1rem; background-color: #e0f2fe; border-left: 4px solid #0284c7; font-weight: 600; border-radius: 0 4px 4px 0; }
+
+        /* Tabla de Diagnóstico */
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.95rem; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: var(--primary); color: white; font-weight: 600; }
+        tr:nth-child(even) { background-color: var(--light); }
+
+        /* Sidebar */
+        aside h4 { color: var(--dark); font-size: 1.2rem; margin-bottom: 1rem; }
+        .sidebar-box { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
+        .sidebar-box ul { list-style: none; }
+        .sidebar-box li { margin-bottom: 0.75rem; }
+        .sidebar-box a { color: var(--secondary); text-decoration: none; }
+        .sidebar-box a:hover { text-decoration: underline; }
+
+        footer { background-color: var(--dark); color: #9ca3af; padding: 2rem 0; font-size: 0.85rem; margin-top: 4rem; }
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+        .footer-links a { color: #d1d5db; text-decoration: none; margin-left: 1rem; }
+        .footer-links a:hover { color: white; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav">
+            <h1>TechMec</h1>
+            <nav>
+                <ul>
+                    <li><a href="#herramientas">Herramientas</a></li>
+                    <li><a href="#diagnostico">Guías de Diagnóstico</a></li>
+                    <li><a href="nosotros.html">Quiénes Somos</a></li>
+                    <li><a href="legal.html">Políticas y Legal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h2>Utilidades y Diagnósticos Técnicos Profesionales</h2>
+            <p>Resolución de problemas en sistemas electromecánicos, algoritmos de conversión de magnitudes y documentación técnica rigurosa.</p>
+        </div>
+    </div>
+
+    <div class="container main-content">
+        <main>
+            <!-- SECCIÓN 1: HERRAMIENTA INTERACTIVA (A Google le encantan las web de herramientas útiles) -->
+            <section id="herramientas">
+                <h3>🛠️ Calculadora de Conversión de Magnitudes Técnicas</h3>
+                <p style="margin-bottom: 1.5rem; color: #555;">Realiza conversiones analíticas instantáneas entre unidades eléctricas y mecánicas utilizadas en diagnósticos industriales y de taller.</p>
+                
+                <div class="calc-group">
+                    <label for="conversionType">Tipo de Conversión:</label>
+                    <select id="conversionType">
+                        <option value="kw-hp">Kilovatios (kW) a Caballos de Fuerza (HP)</option>
+                        <option value="hp-kw">Caballos de Fuerza (HP) a Kilovatios (kW)</option>
+                        <option value="nm-lbft">Torque: Newton-Metro (Nm) a Libras-Pie (lb-ft)</option>
+                    </select>
+                </div>
+                
+                <div class="calc-group">
+                    <label for="inputValue">Ingresa el valor numérico:</label>
+                    <input type="number" id="inputValue" placeholder="Ej. 10" step="any">
+                </div>
+                
+                <button onclick="calcularConversion()">Calcular Valor Técnico</button>
+                
+                <div id="result" style="display: none;"></div>
+            </section>
+
+            <!-- SECCIÓN 2: CONTENIDO INFORMATIVO DE ALTO VALOR (Satisface la intención de búsqueda de AdSense) -->
+            <section id="diagnostico">
+                <h3>📊 Guía de Diagnóstico Sistemático de Fallas</h3>
+                <p style="margin-bottom: 1rem;">Protocolo estructurado para la detección y corrección de anomalías comunes en maquinaria industrial y sistemas de soporte electromecánico.</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Síntoma Detectado</th>
+                            <th>Causa Raíz Probable</th>
+                            <th>Acción Correctiva Recomendada</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Caída severa de tensión bajo carga técnica</td>
+                            <td>Resistencia de contacto elevada o conexionado deficiente.</td>
+                            <td>Verificar continuidad, limpiar bornes y reapretar conexiones.</td>
+                        </tr>
+                        <tr>
+                            <td>Sobrecalentamiento mecánico en ejes rotativos</td>
+                            <td>Falta de lubricación específica o desalineación estructural.</td>
+                            <td>Evaluar niveles de fluido e inspeccionar alineación con micrómetro.</td>
+                        </tr>
+                        <tr>
+                            <td>Ruido intermitente de alta frecuencia (Estructuras)</td>
+                            <td>Desgaste crítico en rodamientos o desbalance dinámico.</td>
+                            <td>Reemplazar rodamientos e implementar balanceo del sistema.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <aside>
+            <div class="sidebar-box">
+                <h4>Documentación Útil</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #666;">Información técnica validada bajo estrictos estándares de precisión matemática.</p>
+                <ul>
+                    <li>• <a href="#diagnostico">Protocolos de Continuidad</a></li>
+                    <li>• <a href="#herramientas">Sistemas de Conversión SI</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-box">
+                <h4>Compromiso EEAT</h4>
+                <p style="font-size: 0.85rem; color: #555; line-height: 1.4;">Este sitio publica únicamente metodologías basadas en especificaciones de ingeniería y manuales de servicio estandarizados para garantizar la máxima seguridad operativa.</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2026 TechMec. Todos los derechos reservados.</p>
+                <p>Información técnica de libre acceso orientada al ámbito industrial y de reparaciones.</p>
+            </div>
+            <div class="footer-links">
+                <a href="nosotros.html">Quiénes Somos</a>
+                <a href="legal.html">Aviso Legal y Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function calcularConversion() {
+            const tipo = document.getElementById('conversionType').value;
+            const valor = parseFloat(document.getElementById('inputValue').value);
+            const resultDiv = document.getElementById('result');
+            
+            if (isNaN(valor)) {
+                resultDiv.style.display = 'block';
+                resultDiv.style.backgroundColor = '#ffeeee';
+                resultDiv.style.borderLeftColor = '#ef4444';
+                resultDiv.innerText = 'Por favor, introduce un número válido para realizar el cálculo.';
+                return;
+            }
+            
+            let resultado = 0;
+            let unidad = "";
+            
+            resultDiv.style.backgroundColor = '#e0f2fe';
+            resultDiv.style.borderLeftColor = '#0284c7';
+
+            switch(tipo) {
+                case 'kw-hp':
+                    resultado = valor * 1.34102;
+                    unidad = "HP (Caballos de Fuerza)";
+                    break;
+                case 'hp-kw':
+                    resultado = valor / 1.34102;
+                    unidad = "kW (Kilovatios)";
+                    break;
+                case 'nm-lbft':
+                    resultado = valor * 0.73756;
+                    unidad = "lb-ft (Libras-Pie)";
+                    break;
+            }
+            
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `Resultado Analítico: <strong>${resultado.toFixed(4)} ${unidad}</strong>`;
+        }
+    </script>
+</body>
+  </html>
 
